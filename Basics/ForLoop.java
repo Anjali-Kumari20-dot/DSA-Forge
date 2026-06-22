@@ -21,7 +21,5 @@ public class ForLoop {
                 System.out.println(i + " is an odd number");
             }
         }
-
-        
     }
 }
