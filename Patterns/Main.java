@@ -57,9 +57,11 @@ class Solution {
 
     public void printEquilateralTriangle(int m){
         for(int i = 0 ; i < m; i++){
+            // spaces
             for(int k = m ; k > i ; k--){
                 System.out.print(" ");
             }
+            // stars
             for(int j = 0 ; j < (i * 2 + 1); j++){
                 System.out.print("*");
             }
@@ -90,7 +92,6 @@ class Solution {
         printEquilateralTriangle(m);
         printInvertedEquilateralTriangle(m);
     }
-
 
     public void printTriangleIII(int m){
         for(int i = 0; i <= m * 2; i++){
@@ -150,11 +151,72 @@ class Solution {
             System.out.println();
         }
     }
+
+    public void printTriangleAlphabetI(int m){
+        for(int i = 0 ; i < m; i++){
+            for(int j = 65 ; j < 65 + i; j++){
+                System.out.print((char)j );
+            }
+            System.out.println();
+        }
+    }
+
+    public void printTriangleAlphabetII(int m){
+        for(int i = 0 ; i < m; i++){
+            for(int j = 65 ; (i + j) < (65 + m); j++){
+                System.out.print((char)i );
+            }
+            System.out.println();
+        }
+    }
+
+    public void printTriangleAlphabetIII(int m){
+        for(int i = 0 ; i < m; i++){
+            for(int j = 0 ; j <= i; j++){
+                System.out.print((char)(i + 65));
+            }
+            System.out.println();
+        }
+    }
+
+    public void printTriangleAlphabetIV(int m){ 
+        for(int i = 0 ; i < m; i++){
+            // spaces
+            for(int k = m ; k > i ; k--){
+                System.out.print(" ");
+            }
+            // Alphabet
+            for(int j = 65 ; j <= 65 + i - 1; j++){
+                System.out.print((char)j );
+            }
+ 
+            for(int j = 65 + i  ; j >= 65 ; j--){
+                System.out.print((char)j );
+            }            
+            System.out.println();
+        }
+    }
+
+    public void printTriangleAlphabetV(int m){
+        for(int i = 0; i < m; i++){
+            for(int j = (m - i); j <= m; j++){
+                System.out.print((char)(j + 64) + " ");
+            }
+            System.out.println();
+        }
+    }
 }
 
 public class Main {
     public static void main(String[] args){
         Solution obj = new Solution();
+
+        // obj.printTriangleAlphabetII(5);
+        // obj.printTriangleAlphabetIII(5);
+        // obj.printTriangleAlphabetIV(5);
+
+        obj.printTriangleAlphabetV(5);
+
         // obj.printRectangle(3, 2);
 
         // obj.printTriangle(5);
@@ -177,6 +239,8 @@ public class Main {
 
         // obj.printNumberPatternII(4);
 
-        obj.printNumberTriangleIII(5);
+        // obj.printNumberTriangleIII(5);
+
+        // obj.printTriangleAlphabetI(5);
     }
 }
