@@ -1,107 +1,107 @@
 package Patterns;
 
 class Solution {
-    public void printRectangle(int m, int n){
-        for(int i = 0; i < m; i++){
-            for (int j = 0; j < n; j++){
+    public void printRectangle(int m, int n) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 System.out.print(" * ");
             }
             System.out.println();
         }
     }
 
-    public void printTriangle(int m){
-        for(int i = 0; i < m; i++){
-            for(int j = 0; j < i; j++){
-                System.out.print(" + ");
+    public void printTriangle(int m) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" * ");
             }
             System.out.println();
         }
     }
 
-    public void printNumberTriangleI(int m){
-        for(int i = 1; i <= m ; i++){
-            for(int j = 1; j <= i; j++){
+    public void printNumberTriangleI(int m) {
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print(j);
             }
             System.out.println();
         }
     }
 
-    public void printNumberTriangleII(int m){
-        for(int i = 1; i <= m ; i++){
-            for(int j = 1; j <= i; j++){
+    public void printNumberTriangleII(int m) {
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print(i);
             }
             System.out.println();
         }
     }
 
-    public void printInvertedTriangle(int m){
-        for(int i = m; i > 0; i--){
-            for(int j = i; j > 0; j--){
+    public void printInvertedTriangle(int m) {
+        for (int i = m; i > 0; i--) {
+            for (int j = i; j > 0; j--) {
                 System.out.print(" * ");
             }
             System.out.println();
         }
     }
 
-    public void printNumberInvertedTriangle(int m){
-        for(int i = 0; i < m; i++){
-            for(int j = 1; (i + j) < m ; j++){
+    public void printNumberInvertedTriangle(int m) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 1; (i + j) < m; j++) {
                 System.out.print(j);
             }
             System.out.println();
         }
-    }    
+    }
 
-    public void printEquilateralTriangle(int m){
-        for(int i = 0 ; i < m; i++){
+    public void printEquilateralTriangle(int m) {
+        for (int i = 0; i < m; i++) {
             // spaces
-            for(int k = m ; k > i ; k--){
+            for (int k = m; k > i; k--) {
                 System.out.print(" ");
             }
             // stars
-            for(int j = 0 ; j < (i * 2 + 1); j++){
+            for (int j = 0; j < (i * 2 + 1); j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
     }
 
-    public void printInvertedEquilateralTriangle(int m){
+    public void printInvertedEquilateralTriangle(int m) {
 
         // outer for loop - iterating through rows
-        for(int i = 0; i < m; i++){
+        for (int i = 0; i < m; i++) {
 
             // print spaces - increasing spaces to shift stars to right
-            for(int k = i; k >= 0; k--){ 
+            for (int k = i; k >= 0; k--) {
                 System.out.print(" ");
             }
 
-            // print stars - decreasing stars count at every step to get the inverted equilateral triangle pattern
+            // print stars - decreasing stars count at every step to get the inverted
+            // equilateral triangle pattern
             int stars = (m - i) * 2 - 1;
-            for(int j = 0; j < stars; j++){
+            for (int j = 0; j < stars; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
     }
-    
-    public void printDiamond(int m){
+
+    public void printDiamond(int m) {
         printEquilateralTriangle(m);
         printInvertedEquilateralTriangle(m);
     }
 
-    public void printTriangleIII(int m){
-        for(int i = 0; i <= m * 2; i++){
-            if(i <= m) {
-                for(int j = 0; j <= i; j++){
+    public void printTriangleIII(int m) {
+        for (int i = 0; i <= m * 2; i++) {
+            if (i <= m) {
+                for (int j = 0; j <= i; j++) {
                     System.out.print("*");
                 }
-            }
-            else{
-                for(int j = 0; (j + i) <= m * 2; j++){
+            } else {
+                for (int j = 0; (j + i) <= m * 2; j++) {
                     System.out.print("*");
                 }
             }
@@ -109,12 +109,12 @@ class Solution {
         }
     }
 
-    public void printTriangleIV(int m){
-        for(int i = 0; i < m; i++){
-            for(int j = 0; j <= i; j++){
-                if((i+j) % 2 == 0){
+    public void printTriangleIV(int m) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j <= i; j++) {
+                if ((i + j) % 2 == 0) {
                     System.out.print("1");
-                }else{
+                } else {
                     System.out.print("0");
                 }
             }
@@ -122,85 +122,197 @@ class Solution {
         }
     }
 
-    public void printNumberPatternII(int m){
-        for(int i = 1; i <= m; i++){
+    public void printNumberPatternII(int m) {
+        for (int i = 1; i <= m; i++) {
             // Numbers
-            for(int j = 1; j <= i; j++){
+            for (int j = 1; j <= i; j++) {
                 System.out.print(j);
             }
 
             // spaces
-            for(int k = 1 ; k <= (2 * (m - i)); k++){
+            for (int k = 1; k <= (2 * (m - i)); k++) {
                 System.out.print(" ");
             }
 
             // Numbers
-            for(int j = i; j >= 1; j--){
+            for (int j = i; j >= 1; j--) {
                 System.out.print(j);
             }
             System.out.println();
         }
     }
 
-    public void printNumberTriangleIII(int m){
+    public void printNumberTriangleIII(int m) {
         int count = 1;
-        for(int i = 1; i <= m; i++){
-            for(int j = 1; j <= i; j++){
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print(count++ + " ");
             }
             System.out.println();
         }
     }
 
-    public void printTriangleAlphabetI(int m){
-        for(int i = 0 ; i < m; i++){
-            for(int j = 65 ; j < 65 + i; j++){
-                System.out.print((char)j );
+    public void printTriangleAlphabetI(int m) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 65; j < 65 + i; j++) {
+                System.out.print((char) j);
             }
             System.out.println();
         }
     }
 
-    public void printTriangleAlphabetII(int m){
-        for(int i = 0 ; i < m; i++){
-            for(int j = 65 ; (i + j) < (65 + m); j++){
-                System.out.print((char)i );
+    public void printTriangleAlphabetII(int m) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 65; (i + j) < (65 + m); j++) {
+                System.out.print((char) i);
             }
             System.out.println();
         }
     }
 
-    public void printTriangleAlphabetIII(int m){
-        for(int i = 0 ; i < m; i++){
-            for(int j = 0 ; j <= i; j++){
-                System.out.print((char)(i + 65));
+    public void printTriangleAlphabetIII(int m) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print((char) (i + 65));
             }
             System.out.println();
         }
     }
 
-    public void printTriangleAlphabetIV(int m){ 
-        for(int i = 0 ; i < m; i++){
+    public void printTriangleAlphabetIV(int m) {
+        for (int i = 0; i < m; i++) {
             // spaces
-            for(int k = m ; k > i ; k--){
+            for (int k = m; k > i; k--) {
                 System.out.print(" ");
             }
             // Alphabet
-            for(int j = 65 ; j <= 65 + i - 1; j++){
-                System.out.print((char)j );
+            for (int j = 65; j <= 65 + i - 1; j++) {
+                System.out.print((char) j);
             }
- 
-            for(int j = 65 + i  ; j >= 65 ; j--){
-                System.out.print((char)j );
-            }            
+
+            for (int j = 65 + i; j >= 65; j--) {
+                System.out.print((char) j);
+            }
             System.out.println();
         }
     }
 
-    public void printTriangleAlphabetV(int m){
-        for(int i = 0; i < m; i++){
-            for(int j = (m - i); j <= m; j++){
-                System.out.print((char)(j + 64) + " ");
+    public void printTriangleAlphabetV(int m) {
+        for (int i = 0; i < m; i++) {
+            for (int j = (m - i); j <= m; j++) {
+                System.out.print((char) (j + 64) + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void printWindow(int m) {
+        for (int i = 0; i < 2 * m; i++) {
+            if (i >= m) { // Lower part
+                // Left Triangular stars
+                for (int j = 0; j <= i - m; j++) {
+                    System.out.print("*");
+                }
+                for (int j = i; j < 2 * m - 1; j++) {
+                    System.out.print(" ");
+                }
+                for (int j = i; j < 2 * m - 1; j++) {
+                    System.out.print(" ");
+                }
+                // Right Triangular stars
+                for (int j = 0; j <= i - m; j++) {
+                    System.out.print("*");
+                }
+            } else { // UPPER PART
+                // Left Triangular stars
+                for (int j = m; j > i; j--) {
+                    System.out.print("*");
+                }
+
+                for (int j = 0; j < 2 * i; j++) {
+                    System.out.print(" ");
+                }
+                // Right Triangular stars
+                for (int j = m; j > i; j--) {
+                    System.out.print("*");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+    public void printBow(int m) { // PENDING
+        for (int i = 0; i <= 2 * m; i++) {
+            if (i < m) {
+
+                // left triangle
+                for (int j = 0; j <= i; j++) { // ok
+                    System.out.print(" * ");
+                }
+
+                // spaces
+                for (int j = i; j < m; j++) {
+                    System.out.print("   ");
+                }
+
+                for (int j = i; j < m; j++) {
+                    System.out.print("   ");
+                }
+
+                // right triangle
+                for (int j = 0; j <= i; j++) { // ok
+                    System.out.print(" * ");
+                }
+            } else {
+                // left triangle
+                for (int j = i - m; j <= m; j++) { // ok
+                    System.out.print(" * ");
+                }
+
+                // spaces
+                for (int j = 0; j < i - m; j++) {
+                    System.out.print("   ");
+                }
+
+                for (int j = 0; j < i - m; j++) {
+                    System.out.print("   ");
+                }
+
+                // right triangle
+                for (int j = i - m; j <= m; j++) {
+                    System.out.print(" * ");
+                }
+            }
+            System.out.println();
+        }
+
+    }
+
+    public void printHollowTriangle(int m) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < m; j++) {
+                if (i == 0 || j == 0 || i == m - 1 || j == m - 1) {
+                    System.out.print(" * ");
+                } else {
+                    System.out.print("   ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+    public void printNumberSquare(int m) {
+        int count = m;
+        for (int i = 0; i < 2 * m - 1; i++, count--) {
+            for (int j = 0; j < 2 * m - 1; j++) {
+                int left = j;
+                int right = (2 * m - 2 - j);
+                int top = i;
+                int bottom = (2 * m - i - 2);
+
+                System.out.print(m - Math.min(Math.min(left, right), Math.min(top, bottom)) + " ");
             }
             System.out.println();
         }
@@ -208,14 +320,21 @@ class Solution {
 }
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Solution obj = new Solution();
+
+        // obj.printBow(4);
+
+        // obj.printHollowTriangle(4);
+        obj.printNumberSquare(4);
 
         // obj.printTriangleAlphabetII(5);
         // obj.printTriangleAlphabetIII(5);
         // obj.printTriangleAlphabetIV(5);
 
-        obj.printTriangleAlphabetV(5);
+        // obj.printTriangleAlphabetV(5);
+
+        // obj.printWindow(5);
 
         // obj.printRectangle(3, 2);
 
