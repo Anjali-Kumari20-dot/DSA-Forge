@@ -304,8 +304,8 @@ class Solution {
     }
 
     public void printNumberSquare(int m) {
-        int count = m;
-        for (int i = 0; i < 2 * m - 1; i++, count--) {
+
+        for (int i = 0; i < 2 * m - 1; i++) {
             for (int j = 0; j < 2 * m - 1; j++) {
                 int left = j;
                 int right = (2 * m - 2 - j);
