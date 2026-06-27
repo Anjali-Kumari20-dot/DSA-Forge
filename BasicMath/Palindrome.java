@@ -1,7 +1,8 @@
 package BasicMath;
+import java.util.*;
 
 class Solution{
-    public boolean Ispalindrome(int num){
+    public boolean IspalindromeI(int num){
         int temp = num;
         int revNum = 0;
 
@@ -13,14 +14,20 @@ class Solution{
 
         return num == revNum;
     }
+
+    public boolean IspalindromeII(int num){
+        String original = String.valueOf(num);
+        String reversed = new StringBuilder(original).reverse().toString();
+        return reversed.equals(original);
+    }
 }
 
 public class Palindrome {
     public static void main(String[] args) {
     
         Solution obj = new Solution();
-        int n = 1221;
-        System.out.println(obj.Ispalindrome(n));
+        int n = 1721;
+        System.out.println(obj.IspalindromeII(n));
 
     }
 }
