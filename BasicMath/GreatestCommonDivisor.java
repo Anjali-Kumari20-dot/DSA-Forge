@@ -36,12 +36,25 @@ class Solution{
         return n2;
     }
 
+    // Optimal Approach - Euclidean Algorithm -> Modified
+    public int findGcdModified(int num1, int num2){
+        while(num1 > 0 && num2 > 0){
+            if(num1 > num2) num1 = num1 % num2;
+            else num2 = num2 % num1;
+        }
+        if(num1 == 0) 
+            return num2;
+        else 
+            return num1;
+    }
+
 }
 public class GreatestCommonDivisor {
     public static void main(String[] args){
         Solution obj = new Solution();
         // int gcd = obj.findGcdI(9, 12);
-        int gcd = obj.findGcdIII(9, 12);
+        // int gcd = obj.findGcdIII(9, 12);
+        int gcd = obj.findGcdModified(9, 12);
         System.out.println(gcd);
     }
 }
