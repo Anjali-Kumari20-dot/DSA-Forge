@@ -9,6 +9,7 @@ class Solution{
         }
         return count;
     }
+    
     public int CountDigitsII(int num){
         return String.valueOf(num).length();
     }

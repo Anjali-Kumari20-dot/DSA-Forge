@@ -1,5 +1,4 @@
 package BasicMath;
-import java.util.*;
 
 class Solution{
     public boolean IspalindromeI(int num){
